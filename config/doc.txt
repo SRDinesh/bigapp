@@ -1,0 +1,53 @@
+1. User Sigin Up
+
+Url: http://localhost:1337/siginUp
+Method: POST
+
+Request: 
+
+{
+	"user_name": "kumar",
+	"email": "rudineshkumar@gmail.com",
+	"password": "asdfasdf",
+	"user_type": 2
+}
+
+user_type: 1 is admin
+user_type: 2 is user
+
+Response: 
+
+{
+    "statusCode": 200,
+    "apiStatus": false,
+    "result": "Created Successfully"
+}
+
+2.Login
+
+Url: http://localhost:1337/login
+Method: POST
+
+Request: 
+{
+	"email": "rudineshkumar@gmail.com",
+	"password": "asdfasdf"
+}
+
+Response:
+{
+    "statusCode": 200,
+    "apiStatus": true,
+    "user": {
+        "user_type": 2,
+        "user_name": "Dineshkumar",
+        "email": "rudineshkumar@gmail.com",
+        "password": "$2a$10$Lhtmz3Vz0G3Nult0zW37XuKK0MolaEFJu.vKHcTtTeCmvaWdtscrK",
+        "active_status": 1,
+        "delete_status": 0,
+        "id": 1,
+        "createdAt": "2017-11-18T06:48:30.000Z",
+        "updatedAt": "2017-11-18T06:48:30.000Z"
+    },
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcl90eXBlIjoyLCJlbWFpbCI6InJ1ZGluZXNoa3VtYXJAZ21haWwuY29tIiwiaWF0IjoxNTEwOTg3OTk3LCJleHAiOjE1MTEwNzQzOTd9._U15wb9ZlS8Nh-_QOmyYfrLBy1TZMXyytVOZ8KYD6Rw"
+}
