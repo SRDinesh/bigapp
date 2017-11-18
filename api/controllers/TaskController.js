@@ -42,6 +42,12 @@ module.exports = {
 		if(data.end_date)
 			searchQuery.createdAt = { "<=" : new Date(data.end_date)};
 
+		if(data.task_name) 
+	  		searchQuery.task_name = {'startsWith':data.task_name};
+
+	  	if(data.discription) 
+	  		searchQuery.discription = {'startsWith':data.discription};
+
 		Task.find(searchQuery).populate('user_id')
 		.then(list => res.json(200,{"statusCode": 200, "apiStatus": true, "result": list}))
 		.fail(error => res.json(400,{"statusCode": 400, "apiStatus": false, "result": error}));
