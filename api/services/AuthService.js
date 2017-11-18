@@ -12,7 +12,7 @@ module.exports = {
 				pass.match = false;
 				callback(null,pass);
 		 	} else {
-		  		// Password comparision 
+		  		// Password comparision
 			  	User.comparePassword(password, user, function (err, valid) {			     
 			    	if (err)
 			    		callback(err);			    
